@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <link rel="stylesheet" href="fe.css">
+</head>
+<body>
+    <header>
+        <h1>Our Features</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="features">
+        <h2>Explore Our Key Features</h2>
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button class="dropdown-btn">Real-Time Syncing</button>
+                <div class="dropdown-content">
+                    <p>Link your financial accounts for live updates on your financial health.</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">Financial Care</button>
+                <div class="dropdown-content">
+                    <p>Get personalized investment recommendations to optimize your portfolio.</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">Debt Management</button>
+                <div class="dropdown-content">
+                    <p>Receive guidance on managing and reducing your debts effectively.</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">Education Courses</button>
+                <div class="dropdown-content">
+                    <p>Access courses to enhance your financial knowledge and skills.</p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">Offline Workshops</button>
+                <div class="dropdown-content">
+                    <p>Participate in local workshops to gain hands-on financial education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Financial Health App. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.dropdown-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdownContent = button.nextElementSibling;
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalised Financial Health </title>
+    <link rel="stylesheet" href="HEALTH.CSS">
+</head>
+<body>
+    <header>
+        <H1 TEXT-ALIGN="centre"> </H1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="fe.html">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Login/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Take Control of Your Financial Health</h1>
+        <p>Track your spending, manage your debt, and boost your financial score.</p>
+        <a href="2nd.html" class="cta-btn">Check Your Score!</a>
+    </section>
+    
+
+    <section id="features">
+        <h2>Our Features</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>Financial Health Score</h3>
+                <p>Get real-time updates on your personalized financial health score.</p>
+            </div>
+            <div class="feature">
+                <h3>Real-Time Updates</h3>
+                <p>Link your accounts and track your finances in real-time.</p>
+            </div>
+            <div class="feature">
+                <h3>Actionable Advice</h3>
+                <p>Receive tailored recommendations to improve your financial well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Financial Health App. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Handle Score Update
+        document.getElementById('update-score-btn').addEventListener('click', function() {
+            const newScore = document.getElementById('score-input').value;
+            document.getElementById('current-score').innerText = newScore || "00";
+        });
+    </script>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<script>
+    // Smooth Scrolling Script
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Detect scroll and toggle active class on navbar links
+    window.addEventListener('scroll', function() {
+        const featuresSection = document.querySelector('#features');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        // Get current scroll position
+        const scrollPosition = window.pageYOffset;
+
+        // Check if user is in the Features section
+        const featuresTop = featuresSection.offsetTop - 50; // Adjust for any header height
+        const featuresBottom = featuresTop + featuresSection.offsetHeight;
+
+        // If user is in the features section
+        if (scrollPosition >= featuresTop && scrollPosition <= featuresBottom) {
+            // Add 'active' class to the Features nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Remove active from other links
+                if (link.getAttribute('href') === '#features') {
+                    link.classList.add('active');
+                }
+            });
+        } else {
+            // Remove 'active' class if outside the Features section
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

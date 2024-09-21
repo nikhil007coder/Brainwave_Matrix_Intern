@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2nd.css">
+
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Score Form</title>
+    <link rel="stylesheet" href="second.css">
+</head>
+<body>
+    <section id="financial-form">
+        <h2 class="form-title">Enter Your Financial Details</h2>
+        <form id="financeForm">
+            <div class="form-group">
+                <label for="income">Monthly Income:</label>
+                <input type="number" id="income" name="income" placeholder="Enter your monthly income" required>
+            </div>
+
+            <div class="form-group">
+                <label for="savings">Monthly Savings:</label>
+                <input type="number" id="savings" name="savings" placeholder="Enter your monthly savings" required>
+            </div>
+
+            <div class="form-group">
+                <label for="investments">Monthly Investments:</label>
+                <input type="number" id="investments" name="investments" placeholder="Enter your monthly investments" required>
+            </div>
+
+            <div class="form-group">
+                <label for="debts">Total Debts:</label>
+                <input type="number" id="debts" name="debts" placeholder="Enter your total debts" required>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="calculateScore()">Calculate Score</button>
+        </form>
+
+        <div id="result">
+            <h3>Your Financial Score:</h3>
+            <p id="score">0</p>
+        </div>
+    </section>
+
+    <script>
+    function calculateScore() {
+        // Get user input values
+        const income = parseFloat(document.getElementById('income').value);
+        const savings = parseFloat(document.getElementById('savings').value);
+        const investments = parseFloat(document.getElementById('investments').value);
+        const debts = parseFloat(document.getElementById('debts').value);
+
+        // Normalize the inputs (This example uses simple scaling for illustration)
+        const incomeScore = Math.min(income / 10000 * 100, 100);
+        const savingsScore = Math.min(savings / 5000 * 100, 100);
+        const investmentsScore = Math.min(investments / 10000 * 100, 100);
+        const debtScore = Math.max(0, 100 - (debts / 10000 * 100));
+
+        // Calculate the financial score
+        const score = (incomeScore * 0.4) + (savingsScore * 0.3) + (investmentsScore * 0.2) - (debtScore * 0.1);
+
+        // Display the score
+        document.getElementById('score').innerText = Math.round(score);
+    }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
